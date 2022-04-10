@@ -1,0 +1,2 @@
+#!/bin/sh
+cat $HOME/.ascii/$(shuf -i 1-$(ls $HOME/.ascii | wc -l) -n 1)

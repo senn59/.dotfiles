@@ -1,0 +1,5 @@
+#!/bin/sh
+batterylvl="$(cat /sys/class/power_supply/BAT0/capacity)"
+if (($batterylvl < 15)); then
+	$(sudo light -S 10; /home/senn/refbar)
+fi;
