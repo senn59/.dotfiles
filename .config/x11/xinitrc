@@ -1,0 +1,8 @@
+#!/bin/bash
+eval $(gnome-keyring-daemon --start)
+export SSH_AUTH_SOCK
+xrdb ~/.Xresources &
+exec ~/.fehbg &
+exec ~/dwmbar &
+exec compton &
+exec dwm
