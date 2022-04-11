@@ -22,8 +22,8 @@ zstyle ':vcs_info:git:*' formats       '(%b%u%c)'
 zstyle ':vcs_info:git:*' actionformats '(%b|%a%u%c)'
 
 #Aliases
-alias repos='cd ~/Programming/repos'
-alias docs='cd ~/Documents'
+alias repos='cd ~/code/repos'
+alias dots='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 # Basic auto/tab complete:
 autoload -U compinit
 zstyle ':completion:*' menu select
@@ -40,7 +40,5 @@ if [ -n "$DESKTOP_SESSION" ];then
     export SSH_AUTH_SOCK
 fi
 
-#change shell to zsh
-export SHELL=zsh
 #generate ascii
 $HOME/.local/bin/asciigen

@@ -1,8 +1,11 @@
 #!/bin/bash
 eval $(gnome-keyring-daemon --start)
 export SSH_AUTH_SOCK
+
+xwallpaper --zoom $HOME/pics/wallpapers/madara-hashirama.png &
+xset r rate 250 45 &
 xrdb ~/.Xresources &
-exec ~/.fehbg &
-exec ~/dwmbar &
-exec compton &
-exec dwm
+dwmbar &
+compton &
+
+exec dwm > /dev/null 2>&1
