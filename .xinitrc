@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 eval $(gnome-keyring-daemon --start)
 export SSH_AUTH_SOCK
 
@@ -9,4 +9,4 @@ xrdb ~/.Xresources &
 dwmbar &
 xcompmgr &
 
-exec dwm > /dev/null 2>&1
+while type dwm >/dev/null ; do dwm && continue || break ; done
