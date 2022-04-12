@@ -1,0 +1,17 @@
+#!/bin/sh
+
+wall_dir=~/pics/wallpapers
+
+if [ -z "$1" ]; then
+	wall="$(find "$wall_dir" -type f -name "*.jpg" -o -name ".png" | shuf -n1)"
+else
+	wall="$1"
+fi
+
+convert "$wall" ~/.local/share/bg.jpg
+xwallpaper --zoom ~/.local/share/bg.jpg
+wal -c
+wal -i ~/.local/share/bg.jpg
+sed  -i 'N;$!P;D' $HOME/.cache/wal/colors-wal-dwm.h
+(cd $HOME/.local/src/dwm && sudo make clean install>/dev/null)
+(cd $HOME/.local/src/dmenu && sudo make clean install>/dev/null)

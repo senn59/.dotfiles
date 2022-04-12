@@ -1,0 +1,14 @@
+#!/bin/sh
+xrdb ~/.config/x11/Xresources
+xrdb -merge ~/.cache/wal/colors.Xresources
+
+eval $(gnome-keyring-daemon --start)
+export SSH_AUTH_SOCK
+
+xwallpaper --zoom ~/.local/share/bg.jpg
+xautolock -time 10 -locker slock &
+xset r rate 250 45 &
+dwmbar &
+xcompmgr &
+
+while type dwm >/dev/null ; do dwm && continue || break ; done
