@@ -1,2 +1,3 @@
 #!/bin/sh
-cat $HOME/.ascii/$(shuf -i 1-$(ls $HOME/.ascii | wc -l) -n 1)
+ascii_folder="$HOME/.local/share/ascii"
+cat $ascii_folder/$(shuf -i 1-$(ls $ascii_folder | wc -l) -n 1)
