@@ -1,1 +1,17 @@
-/home/senn/.config/shell/profile
+export EDITOR="vim"
+export TERMINAL="st"
+export BROWSER="chromium"
+
+export XDG_CONFIG_HOME="$HOME/.config"
+export XDG_DATA_HOME="$HOME/.local/share"
+export XDG_CACHE_HOME="$HOME/.cache"
+
+export XINITRC="$XDG_CONFIG_HOME/x11/xinitrc"
+export ZDOTDIR="$XDG_CONFIG_HOME/zsh"
+export INPUTRC="$XDG_CONFIG_HOME/shell/inputrc"
+export PATH=$PATH:$HOME/.local/bin
+
+# Starting X
+if [ -z "${DISPLAY}" ] && [ "${XDG_VTNR}" -eq 1 ]; then
+  exec startx
+fi
