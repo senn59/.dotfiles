@@ -5,7 +5,7 @@ xrdb -merge ~/.cache/wal/colors.Xresources
 eval $(gnome-keyring-daemon --start)
 export SSH_AUTH_SOCK
 
-xwallpaper --zoom ~/.local/share/bg.jpg
+xwallpaper --zoom $(cat ~/.config/wallpaper.conf)
 xautolock -time 10 -locker slock &
 xset r rate 250 45 &
 dwmbar &

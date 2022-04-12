@@ -1,0 +1,10 @@
+#!/bin/sh
+
+while read file
+do
+	case "$1" in
+		"w") setbg "$file";;
+		"d") mv "$file" $HOME/pics/.trash ;;
+		"b") mv "$file" $HOME/pics/walls/bussin ;;
+	esac
+done
