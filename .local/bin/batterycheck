@@ -1,5 +1,6 @@
 #!/bin/sh
-batterylvl="$(cat /sys/class/power_supply/BAT0/capacity)"
-if (($batterylvl < 15)); then
-	$(sudo light -S 5; /home/senn/refbar)
+batterycap="$(cat /sys/class/power_supply/BAT0/capacity)"
+batterystatus="$(cat /sys/class/power_supply/BAT0/status)"
+if [ "$batterystatus" = "Discharging" ] && (( $batterycap < 15 )); then
+	$(sudo light -S 5; /home/senn/.local/bin/refbar)
 fi;
