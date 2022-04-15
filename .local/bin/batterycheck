@@ -3,4 +3,5 @@ batterycap="$(cat /sys/class/power_supply/BAT0/capacity)"
 batterystatus="$(cat /sys/class/power_supply/BAT0/status)"
 if [ "$batterystatus" = "Discharging" ] && (( $batterycap < 15 )); then
 	$(sudo light -S 5; /home/senn/.local/bin/refbar)
+	notify-send -h string:bgcolor:#FF0000 "Low battery %"
 fi;
