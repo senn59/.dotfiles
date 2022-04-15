@@ -9,6 +9,7 @@ xwallpaper --zoom $(cat ~/.config/wallpaper.conf)
 xautolock -time 20 -locker slock &
 xset r rate 250 45 &
 sxhkd &
+dunst &
 dwmbar &
 xcompmgr &
 
