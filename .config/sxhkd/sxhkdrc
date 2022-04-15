@@ -1,0 +1,8 @@
+XF86Audio{RaiseVolume,LowerVolume,Mute}
+	amixer -c 1 -q set Master {5%+ unmute, 5%- unmute, mute}; refbar
+
+XF86AudioMicMute
+	amixer -c 1 set Capture toggle
+
+XF86MonBrightness{Up,Down}
+	sudo light {-A 10, -U 10}; refbar
