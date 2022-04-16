@@ -9,7 +9,7 @@ light(){
 	echo "$light%"
 }
 vol(){
-	vol="$(amixer -c 1 get Master | grep 'Mono:' | awk -F'[][]' '{print $2}')"
+	vol="$(pamixer --get-volume-human)"
 	echo "$vol"
 }
 datenow(){
