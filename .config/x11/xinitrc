@@ -10,7 +10,7 @@ xautolock -time 20 -locker slock &
 xset r rate 250 45 &
 sxhkd &
 dunst &
-dwmbar &
 xcompmgr &
+dwmbar &
 
 while type dwm >/dev/null ; do dwm && continue || break ; done
