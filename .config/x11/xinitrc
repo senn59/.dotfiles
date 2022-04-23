@@ -10,7 +10,7 @@ xautolock -time 20 -locker slock &
 xset r rate 250 45 &
 sxhkd &
 dunst &
-xcompmgr &
+picom --no-fading-openclose &
 dwmbar &
 
 while type dwm >/dev/null ; do dwm && continue || break ; done
