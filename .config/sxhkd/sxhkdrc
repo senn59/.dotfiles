@@ -8,3 +8,7 @@ XF86AudioMicMute
 XF86MonBrightness{Up,Down}
 	sudo light {-A 10, -U 10}; \
 	kill -35 "$(cat ~/.cache/pidofbar)"
+
+Print
+    flameshot gui
+    

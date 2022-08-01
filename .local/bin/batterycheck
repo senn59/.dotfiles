@@ -1,7 +1,16 @@
 #!/bin/sh
+
+#we have to add this in order to make "notify-send" work in crontab
+#export DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus export DISPLAY=:0;
+
 batterycap="$(cat /sys/class/power_supply/BAT0/capacity)"
 batterystatus="$(cat /sys/class/power_supply/BAT0/status)"
+if [ "$batterystatus" = "Discharging" ] && (( $batterycap < 3 )); then
+	notify-send -u "critical" "Shutting down..."
+    sleep 3
+    sudo shutdown -h now
+fi;
 if [ "$batterystatus" = "Discharging" ] && (( $batterycap < 15 )); then
-	$(sudo light -S 5; refbar)
-	notify-send -h string:bgcolor:#FF0000 "Low battery %"
+    notify-send -u "critical" "Low battery %"
+	sudo light -S 5;
 fi;
