@@ -10,7 +10,8 @@ xwallpaper --zoom $(cat ~/.config/wallpaper.conf)
 xset r rate 250 45 &
 sxhkd &
 dunst &
-picom --no-fading-openclose &
+flameshot &
+xcompmgr &
 sbar &
 
 while type dwm >/dev/null ; do dwm && continue || break ; done
