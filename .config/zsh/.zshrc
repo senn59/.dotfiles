@@ -24,6 +24,7 @@ zstyle ':vcs_info:git:*' actionformats '(%b|%a%u%c)'
 #Aliases
 alias repos='cd ~/code/repos'
 alias dots='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+alias vim='nvim'
 # Basic auto/tab complete:
 autoload -U compinit
 zstyle ':completion:*' menu select

@@ -13,7 +13,7 @@ update_memory () {
 	memory="$(free -h | sed -n "2s/\([^ ]* *\)\{2\}\([^ ]*\).*/\2/p")"
 }
 update_temp () {
-	temp="CPU: $(sensors | grep CPU | sed 's/ //g;s/CPU:+//g')"	
+	temp="🌡$(sensors | grep CPU | sed 's/ //g;s/CPU:+//g')"	
 }
 
 update_time () { 
