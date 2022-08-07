@@ -1,32 +1,41 @@
 !! Transparency (0-1):
-st.alpha: 0.85;
+st.alpha: 0.9;
 st.alphaOffset: 1;
 
 ! st.termname: st-256color
 ! st.borderpx: 2
-st.font: Fira Code:pixelsize=16;
+st.font: JetBrains Mono:pixelsize=16;
 
 !! Set the background, foreground and cursor colors as below:
 
-!! Alfo theme:
 /*
-*.color0: #828282
-*.color1: #ff6464
-*.color2: #ff3232
-*.color3: #ffdf80
-*.color4: #76a1ff
-*.color5: #ff8cff
-*.color6: #64ffff
-*.color7: #ffffff
-*.color8: #828282
-*.color9: #ff6464
-*.color10: #ff3232
-*.color11: #ffdf80
-*.color12: #76a1ff
-*.color13: #ff8cff
-*.color14: #64ffff
-*.color15: #ffffff
-*.background: #121212
-*.foreground: #ababab 
-*.cursorColor: white
+!! Alfo theme:
+!! special
+*.foreground:   #d9d9d9
+*.background:   #101010
+*.cursorColor:  #ababab
+! black
+*.color0:       #828282
+*.color8:       #e6e6e6
+! red
+*.color1:       #FF4D4D
+*.color9:       #E64545
+! green
+*.color2:       #ff3232
+*.color10:      #e62e2e
+! yellow
+*.color3:       #ffdf80
+*.color11:      #e6c973
+! blue
+*.color4:       #76a1ff
+*.color12:      #6e96e6
+! magenta
+*.color5:       #ff8cff
+*.color13:      #e67ee6
+! cyan
+*.color6:       #64ffff
+*.color14:      #5ae6e6
+! white
+*.color7:       #ffffff
+*.color15:      #e6e6e6
 */
