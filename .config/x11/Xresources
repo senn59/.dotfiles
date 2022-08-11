@@ -1,6 +1,6 @@
 !! Transparency (0-1):
 st.alpha: 0.9;
-st.alphaOffset: 1;
+st.alphaOffset: 0.03;
 
 ! st.termname: st-256color
 ! st.borderpx: 2
@@ -21,8 +21,8 @@ st.font: JetBrains Mono:pixelsize=16;
 *.color1:       #FF4D4D
 *.color9:       #E64545
 ! green
-*.color2:       #ff3232
-*.color10:      #e62e2e
+*.color2:       #6aff4d
+*.color10:      #62e645
 ! yellow
 *.color3:       #ffdf80
 *.color11:      #e6c973
