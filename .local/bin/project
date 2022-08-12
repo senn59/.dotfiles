@@ -1,0 +1,7 @@
+#!/bin/sh
+dir="$HOME/code/"
+project="$(ls $dir | dmenu -l 10 -p "what project to open?")"
+if (( "$(ls  $dir | grep $project | wc -l)" != 0 )); then
+    code $dir$project
+fi;
+exit 1
