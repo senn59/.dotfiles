@@ -13,11 +13,11 @@ update_memory () {
 	memory="$(free -h | sed -n "2s/\([^ ]* *\)\{2\}\([^ ]*\).*/\2/p")"
 }
 update_temp () {
-	temp="🌡$(sensors | grep CPU | sed 's/ //g;s/CPU:+//g')"	
+	temp="$(sensors | grep CPU | sed 's/ //g;s/CPU:+//g')"	
 }
 
 update_time () { 
-	time="$(date "+%d/%m/%y %H:%M")" 
+	time="$(date "+%a %d %b %H:%M")" 
 }
 
 update_weather () { 
@@ -49,7 +49,7 @@ update_backlight
 
 display () { 
 	#xsetroot -name " [$weather] [$memory $cpu] [$bat] [$backlight] [$vol] [$time] "
-	xsetroot -name " [$weather] [$bat] [$temp] [$backlight] [$vol] [$time] "
+	xsetroot -name " [$weather] [$bat] [$backlight] [$vol] [CPU: $temp] [$time] "
 }
 
 # SIGNALLING
@@ -65,13 +65,15 @@ while true
 do
 	sleep 1 & wait && { 
 		# to update item ever n seconds with a offset of m
-		## [ $((sec % n)) -eq m ] && udpate_item
+		## [ $((sec % n)) -eq m ] && update_item
 		[ $((sec % 5 )) -eq 0 ] && update_time 	# update time every 5 seconds
 		#[ $((sec % 15)) -eq 0 ] && update_cpu 	# update cpu every 15 seconds
 		# [ $((sec % 15)) -eq 0 ] && update_memory
 		[ $((sec % 5)) -eq 0 ] && update_temp
 		[ $((sec % 5)) -eq 0 ] && update_bat
 		[ $((sec % 3600)) -eq 2 ] && update_weather 
+		[ $((sec % 10)) -eq 0 ] && update_vol
+		[ $((sec % 10)) -eq 0 ] && update_backlight
 
 		# how often the display updates ( 5 seconds )
 		[ $((sec % 5 )) -eq 0 ] && display
