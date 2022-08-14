@@ -8,7 +8,7 @@ batterystatus="$(cat /sys/class/power_supply/BAT0/status)"
 if [ "$batterystatus" = "Discharging" ] && (( $batterycap < 3 )); then
 	notify-send -u "critical" "Shutting down...";
     sleep 3;
-    sudo shutdown -h now;
+    sudo poweroff;
 fi;
 if [ "$batterystatus" = "Discharging" ] && (( $batterycap < 15 )); then
     notify-send -u "critical" "Low battery %";
