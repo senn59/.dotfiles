@@ -6,12 +6,13 @@ eval $(gnome-keyring-daemon --start)
 export SSH_AUTH_SOCK
 
 xwallpaper --zoom $(cat ~/.config/wallpaper.conf)
+sbar &
 xautolock -locker slocker -notifier "notify-send Locking laptop in 15s" -notify 15 -time 10 &
+batsignal -i -M "sudo light -S 10" -c 0 -d 5 -D "systemctl suspend" -b &
 xset r rate 250 45 &
 sxhkd &
 dunst &
 flameshot &
 xcompmgr &
-sbar &
 
 while type dwm >/dev/null ; do dwm && continue || break ; done

@@ -3,7 +3,7 @@ XF86Audio{RaiseVolume,LowerVolume,Mute}
 	kill -34 "$(cat ~/.cache/pidofbar)"
 
 XF86AudioMicMute
-	amixer -c 1 -q set Capture toggle
+	pamixer --source 0 -t
 
 XF86MonBrightness{Up,Down}
 	sudo light {-A 10, -U 10}; \
