@@ -21,6 +21,7 @@ update_time () {
 }
 
 update_weather () { 
+    #weather="$(curl -s "wttr.in?format=1"| sed -E "s/^(.).*\+/\1/")" 
 	weather="$(curl -s "wttr.in?format=1"| sed "s/ //g;s/+//g")" 
 }
 

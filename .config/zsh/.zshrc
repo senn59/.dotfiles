@@ -41,4 +41,4 @@ if [ -n "$DESKTOP_SESSION" ];then
 fi
 
 #generate ascii
-$HOME/.local/bin/asciigen
+#$HOME/.local/bin/asciigen
