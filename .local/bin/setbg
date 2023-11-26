@@ -2,13 +2,6 @@
 
 wall_dir=/dev/null
 wall=/dev/null
-if [ "$1" = "-b" ]; then
-	wall_dir=$HOME/pics/walls/bussin
-	wall="$(find "$wall_dir" -type f -name "*.jpg" -o -name "*.png" | shuf -n1)"
-fi
-if [ "$1" != "-b" ]; then
-	wall="$(readlink -f "$1")"
-fi
 if [ -z  "$1" ]; then
 	wall_dir=$HOME/pics/walls/
 	wall="$(find "$wall_dir" -type f -name "*.jpg" -o -name "*.png"| shuf -n1)"

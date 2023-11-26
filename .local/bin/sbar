@@ -39,8 +39,8 @@ update_vol () {
 
 update_backlight () { 
 	# you might need to change the path depending on your device
-	read -r actual_brightness </sys/class/backlight/amdgpu_bl0/actual_brightness
-	read -r max_brightness </sys/class/backlight/amdgpu_bl0/max_brightness
+	read -r actual_brightness </sys/class/backlight/amdgpu_bl1/actual_brightness
+	read -r max_brightness </sys/class/backlight/amdgpu_bl1/max_brightness
 	backlight="☀$((actual_brightness*100/max_brightness))%"
 }
 
@@ -69,7 +69,7 @@ do
 		# to update item ever n seconds with a offset of m
 		## [ $((sec % n)) -eq m ] && update_item
 		[ $((sec % 5 )) -eq 0 ] && update_time 	# update time every 5 seconds
-		# [ $((sec % 15)) -eq 0 ] && update_cpu 	# update cpu every 15 seconds
+		[ $((sec % 15)) -eq 0 ] && update_cpu 	# update cpu every 15 seconds
 		[ $((sec % 15)) -eq 0 ] && update_memory
 		[ $((sec % 5)) -eq 0 ] && update_temp
 		[ $((sec % 5)) -eq 0 ] && update_bat
