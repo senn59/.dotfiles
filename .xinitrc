@@ -1,1 +1,1 @@
-/home/senn/.config/x11/xinitrc
+/home/senna/.config/x11/xinitrc
