@@ -50,7 +50,6 @@ update_backlight
 
 display () { 
 	#xsetroot -name " [$weather] [$memory $cpu] [$bat] [$backlight] [$vol] [$time] "
-    echo $weather
 	xsetroot -name " [$weather] [$bat] [$backlight] [$vol] [$memory $temp] [$time] "
 }
 
@@ -69,7 +68,7 @@ do
 		# to update item ever n seconds with a offset of m
 		## [ $((sec % n)) -eq m ] && update_item
 		[ $((sec % 5 )) -eq 0 ] && update_time 	# update time every 5 seconds
-		[ $((sec % 15)) -eq 0 ] && update_cpu 	# update cpu every 15 seconds
+		#[ $((sec % 15)) -eq 0 ] && update_cpu 	# update cpu every 15 seconds
 		[ $((sec % 15)) -eq 0 ] && update_memory
 		[ $((sec % 5)) -eq 0 ] && update_temp
 		[ $((sec % 5)) -eq 0 ] && update_bat
