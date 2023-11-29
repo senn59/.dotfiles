@@ -1,0 +1,5 @@
+#!/bin/sh
+xinput --set-prop "ETPS/2 Elantech TrackPoint" "libinput Scrolling Pixel Distance" 20
+xinput --set-prop "ETPS/2 Elantech TrackPoint" "libinput Accel Speed" -0.3
+xinput --set-prop "ETPS/2 Elantech Touchpad" "libinput Natural Scrolling Enabled" 1
+xinput --set-prop "ETPS/2 Elantech Touchpad" "libinput Tapping Enabled" 1
