@@ -6,9 +6,17 @@ if [ -z  "$1" ]; then
 	wall_dir=$HOME/pics/walls/
 	wall="$(find "$wall_dir" -type f -name "*.jpg" -o -name "*.png"| shuf -n1)"
 fi
+if [ "$1" ]; then
+	wall="$(readlink -f "$1")"
+fi
 echo "$wall" > $HOME/.config/wallpaper.conf
 xwallpaper --zoom "$wall"
 wal -c
 wal -i "$wall"
+wal_exit_status=$?
+
+if [ "$wal_exit_status" -ne 0 ]; then
+    exit 1
+fi
 sed  -i 'N;$!P;D' $HOME/.cache/wal/colors-wal-dwm.h
 (cd $HOME/.local/src/dwm && sudo make clean install>/dev/null)
