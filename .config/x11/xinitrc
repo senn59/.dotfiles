@@ -8,7 +8,7 @@ export GNOME_KEYRING_CONTROL GNOME_KEYRING_PID GPG_AGENT_INFO SSH_AUTH_SOCK
 
 xwallpaper --zoom $(cat ~/.config/wallpaper.conf)
 sbar &
-xautolock -locker slocker -notifier "notify-send Locking laptop in 15s" -notify 15 -time 10 &
+#xautolock -locker slocker -notifier "notify-send Locking laptop in 15s" -notify 15 -time 10 &
 batsignal -i -M "sudo light -S 10" -c 10 -d 5 -D "systemctl suspend" -b &
 xset r rate 250 45 &
 sxhkd &
