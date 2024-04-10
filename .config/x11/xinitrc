@@ -1,15 +1,15 @@
 #!/bin/sh
 xrdb ~/.config/x11/Xresources
 xrdb -merge ~/.cache/wal/colors.Xresources
+[ -f ~/.xprofile ] && . ~/.xprofile
 
 eval $(/usr/bin/gnome-keyring-daemon --start --components=gpg,pkcs11,secrets,ssh)
 export GNOME_KEYRING_CONTROL GNOME_KEYRING_PID GPG_AGENT_INFO SSH_AUTH_SOCK
 
-
 xwallpaper --zoom $(cat ~/.config/wallpaper.conf)
 sbar &
-xidlehook --not-when-fullscreen --detect-sleep --timer 240 "notify-send -u critical 'locking in 60 seconds'" "" --timer 60 "systemctl suspend" ""&
-batsignal -i -M "sudo light -S 10" -c 10 -d 5 -D "sudo poweroff" -b &
+xidlehook --not-when-fullscreen --detect-sleep --timer 300 "notify-send -u critical -t 10000 'locking in 60 seconds'" "" --timer 60 "systemctl suspend" ""&
+batsignal -i -M "sudo light -S 10" -c 10 -d 5 -D "sudo systemctl suspend" -b &
 xset r rate 250 45 &
 sxhkd &
 dunst &

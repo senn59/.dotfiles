@@ -1,7 +1,10 @@
 #!/bin/sh
-xinput --set-prop "ETPS/2 Elantech TrackPoint" "libinput Scrolling Pixel Distance" 25 #higher = lower speed
-xinput --set-prop "ETPS/2 Elantech TrackPoint" "libinput Accel Speed" -0.3
+xinput --set-prop "ETPS/2 Elantech TrackPoint" "libinput Scrolling Pixel Distance" 35 #higher = lower speed
+xinput --set-prop "ETPS/2 Elantech TrackPoint" "libinput Accel Speed" -0.25
 xinput --set-prop "ETPS/2 Elantech Touchpad" "libinput Natural Scrolling Enabled" 1 # 1 is inverse (natural) scrolling
 xinput --set-prop "ETPS/2 Elantech Touchpad" "libinput Tapping Enabled" 1 
-xinput --set-prop "ETPS/2 Elantech Touchpad" "libinput Scrolling Pixel Distance" 25 # higher = lower speed
-
+xinput --set-prop "ETPS/2 Elantech Touchpad" "libinput Scrolling Pixel Distance" 35 # higher = lower speed
+xinput --set-prop "Logitech Wireless Mouse" "libinput Accel Speed" -0.35
+xinput --set-prop "Logitech Wireless Mouse" "libinput Scroll Method Enabled" 0, 0, 1 #enable middle click scroll
+xinput --set-prop "Logitech Wireless Mouse" "libinput Button Scrolling Button" 2
+#xmodmap -e "pointer = 1 0 3" #disable middle mouse button
